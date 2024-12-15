@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo46466',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -53,29 +52,52 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Container(
-          color: Colors.blue,
-          width: 1000,
-          height: 400,
-          child: Center(
-              child: Text("hello", style: TextStyle(
-                fontSize: 56,
-                color: Colors.amber,
-                fontWeight: FontWeight.bold,
-              ),)
-          ),
+        appBar: AppBar(
+          // TRY THIS: Try changing the color here to a specific color (to
+          // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+          // change color while the other colors stay the same.
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(widget.title),
         ),
-      )
+        body:
+        Image.asset('assets/images/2.png')
+        // OutlinedButton(
+        //   onPressed: () {
+        //     print('Pressing');
+        //   },
+        //   child: Text('Click ME!'),
+        //   onLongPress: () {
+        //     print("long pressed");
+        //   },
+        // )
+      // ElevatedButton(
+        //   onPressed: () {
+        //     print('Pressing');
+        //   },
+        //   child: Text('Click ME!'),
+        //   onLongPress: () {
+        //     print("long pressed");
+        //   },
+        // )
+              // TextButton(
+              //   onPressed: () {
+              //     print('Pressing');
+              //   },
+              //   child: Text('Click ME!'),
+              //   onLongPress: () {
+              //     print("long pressed");
+              //   },
+              // )
+              // Center(
+              // child: Text("hello", style: TextStyle(
+              //   fontSize: 56,
+              //   color: Colors.amber,
+              //   fontWeight: FontWeight.bold,
+              // ),)
     );
+
+
   }
 }
