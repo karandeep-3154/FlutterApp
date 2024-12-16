@@ -61,18 +61,50 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
-        body: InkWell(
-            onTap: (){
-              print("Clicked on Img");
-            },
-            onDoubleTap: (){
-              print("Double Clicked on Img");
-            },
-            onLongPress: (){
-          print("Long Clicked on Img");
-        },
-            child: Image.asset('assets/images/2.png')
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Container(
+                height: 200,
+                width: 300,
+                color: Colors.amber,
+              ),
+              Container(
+                height: 200,
+                width: 300,
+                color: Colors.brown,
+              ),
+              Container(
+                height: 200,
+                width: 300,
+                color: Colors.green,
+              ),
+              Container(
+                height: 200,
+                width: 300,
+                color: Colors.deepOrange,
+              ),
+              Container(
+                height: 200,
+                width: 300,
+                color: Colors.purple,
+              ),
+            ],
+          ),
         )
+        // InkWell(
+        //     onTap: (){
+        //       print("Clicked on Img");
+        //     },
+        //     onDoubleTap: (){
+        //       print("Double Clicked on Img");
+        //     },
+        //     onLongPress: (){
+        //   print("Long Clicked on Img");
+        // },
+        //     child: Image.asset('assets/images/2.png')
+        // )
         // OutlinedButton(
         //   onPressed: () {
         //     print('Pressing');
