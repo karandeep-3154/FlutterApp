@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    var arr = ['Karandeep', 'Singh', 'Gursharan', 'Kaur', 'Tajinder', "Singh"];
     return Scaffold(
         appBar: AppBar(
           // TRY THIS: Try changing the color here to a specific color (to
@@ -61,38 +62,48 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Container(
-                height: 200,
-                width: 300,
-                color: Colors.amber,
-              ),
-              Container(
-                height: 200,
-                width: 300,
-                color: Colors.brown,
-              ),
-              Container(
-                height: 200,
-                width: 300,
-                color: Colors.green,
-              ),
-              Container(
-                height: 200,
-                width: 300,
-                color: Colors.deepOrange,
-              ),
-              Container(
-                height: 200,
-                width: 300,
-                color: Colors.purple,
-              ),
-            ],
-          ),
-        )
+        body:
+        ListView.separated(itemBuilder: (context, index){
+          return Text(arr[index]);
+        }, separatorBuilder: (context, index){
+          return Divider(height: 200,thickness: 10,);
+        }, itemCount: arr.length)
+          // ListView.builder(itemBuilder: (context, index){
+          //   return Text(arr[index], style: TextStyle(fontWeight: FontWeight.bold),);
+          // },
+          // itemCount: arr.length,)
+        // SingleChildScrollView(
+        //   scrollDirection: Axis.horizontal,
+        //   child: Row(
+        //     children: [
+        //       Container(
+        //         height: 200,
+        //         width: 300,
+        //         color: Colors.amber,
+        //       ),
+        //       Container(
+        //         height: 200,
+        //         width: 300,
+        //         color: Colors.brown,
+        //       ),
+        //       Container(
+        //         height: 200,
+        //         width: 300,
+        //         color: Colors.green,
+        //       ),
+        //       Container(
+        //         height: 200,
+        //         width: 300,
+        //         color: Colors.deepOrange,
+        //       ),
+        //       Container(
+        //         height: 200,
+        //         width: 300,
+        //         color: Colors.purple,
+        //       ),
+        //     ],
+        //   ),
+        // )
         // InkWell(
         //     onTap: (){
         //       print("Clicked on Img");
