@@ -61,8 +61,18 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
-        body:
-        Image.asset('assets/images/2.png')
+        body: InkWell(
+            onTap: (){
+              print("Clicked on Img");
+            },
+            onDoubleTap: (){
+              print("Double Clicked on Img");
+            },
+            onLongPress: (){
+          print("Long Clicked on Img");
+        },
+            child: Image.asset('assets/images/2.png')
+        )
         // OutlinedButton(
         //   onPressed: () {
         //     print('Pressing');
@@ -72,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
         //     print("long pressed");
         //   },
         // )
-      // ElevatedButton(
+        // ElevatedButton(
         //   onPressed: () {
         //     print('Pressing');
         //   },
@@ -81,23 +91,21 @@ class _MyHomePageState extends State<MyHomePage> {
         //     print("long pressed");
         //   },
         // )
-              // TextButton(
-              //   onPressed: () {
-              //     print('Pressing');
-              //   },
-              //   child: Text('Click ME!'),
-              //   onLongPress: () {
-              //     print("long pressed");
-              //   },
-              // )
-              // Center(
-              // child: Text("hello", style: TextStyle(
-              //   fontSize: 56,
-              //   color: Colors.amber,
-              //   fontWeight: FontWeight.bold,
-              // ),)
-    );
-
-
+        // TextButton(
+        //   onPressed: () {
+        //     print('Pressing');
+        //   },
+        //   child: Text('Click ME!'),
+        //   onLongPress: () {
+        //     print("long pressed");
+        //   },
+        // )
+        // Center(
+        // child: Text("hello", style: TextStyle(
+        //   fontSize: 56,
+        //   color: Colors.amber,
+        //   fontWeight: FontWeight.bold,
+        // ),)
+        );
   }
 }
