@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo46466',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'uihihiiuiuiuh Page'),
+      home: const MyHomePage(title: 'First Page'),
     );
   }
 }
@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     var arr = ['Karandeep', 'Singh', 'Gursharan', 'Kaur', 'Tajinder', "Singh"];
+    var curTime = DateTime.now();
     return Scaffold(
         appBar: AppBar(
           // TRY THIS: Try changing the color here to a specific color (to
@@ -60,18 +61,39 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
+          // backgroundColor: Colors.brown,
           title: Text(widget.title),
         ),
-        body:
-        ListView.separated(itemBuilder: (context, index){
-          return Text(arr[index]);
-        }, separatorBuilder: (context, index){
-          return Divider(height: 200,thickness: 10,);
-        }, itemCount: arr.length)
-          // ListView.builder(itemBuilder: (context, index){
-          //   return Text(arr[index], style: TextStyle(fontWeight: FontWeight.bold),);
-          // },
-          // itemCount: arr.length,)
+        body: Center(
+          child: Container(
+            width: 300,
+            height: 300,
+            color: Colors.amber,
+            child: Column(children: [
+              Text("Date Time Now is ${curTime}",
+                  style: TextStyle(fontSize: 35)),
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {});
+                  },
+                  child: Text("Get Latest"))
+            ]),
+          ),
+        )
+        // ListView.separated(itemBuilder: (context, index){
+        //   return ListTile(
+        //     leading: Text('$index'),
+        //     title: Text(arr[index]),
+        //     subtitle: Text('Name'),
+        //     trailing: Icon(Icons.add)
+        //   );
+        // }, separatorBuilder: (context, index){
+        //   return Divider(height: 10,thickness: 1,);
+        // }, itemCount: arr.length)
+        // ListView.builder(itemBuilder: (context, index){
+        //   return Text(arr[index], style: TextStyle(fontWeight: FontWeight.bold),);
+        // },
+        // itemCount: arr.length,)
         // SingleChildScrollView(
         //   scrollDirection: Axis.horizontal,
         //   child: Row(
