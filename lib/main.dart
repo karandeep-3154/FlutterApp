@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo46466',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'First Page'),
@@ -31,6 +31,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  var Result = 0 ;
+
+  var input1 = TextEditingController();
+  var input2 = TextEditingController();
 
   void _incrementCounter() {
     setState(() {
@@ -53,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     var arr = ['Karandeep', 'Singh', 'Gursharan', 'Kaur', 'Tajinder', "Singh"];
     var curTime = DateTime.now();
+
     return Scaffold(
         appBar: AppBar(
           // TRY THIS: Try changing the color here to a specific color (to
@@ -70,13 +76,61 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 300,
             color: Colors.amber,
             child: Column(children: [
-              Text("Date Time Now is ${curTime}",
-                  style: TextStyle(fontSize: 35)),
+              Text("Enter 2 Numbers", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
+              TextField(
+                controller: input1,
+                decoration: InputDecoration(
+
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(21),
+                  borderSide: BorderSide(
+                    color: Colors.purple,
+                    width: 3
+                  )
+                ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(21),
+                      borderSide: BorderSide(
+                          color: Colors.purple,
+                          width: 3
+                      )
+                  ),
+
+              ),),
+              SizedBox(
+                height: 25,
+              ),
+              TextField(
+                controller: input2,
+                decoration: InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(21),
+                    borderSide: BorderSide(
+                        color: Colors.purple,
+                        width: 3
+                    )
+                ),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(21),
+                    borderSide: BorderSide(
+                        color: Colors.purple,
+                        width: 3
+                    )
+                ),
+
+              ),),
               ElevatedButton(
                   onPressed: () {
-                    setState(() {});
+                    setState(() {
+
+                      Result = int.parse(input1.text.toString()) + int.parse(input2.text.toString());
+print(Result);
+                    });
                   },
                   child: Text("Get Latest"))
+              ,
+              Text("Sum is ${Result}")
+
             ]),
           ),
         )
